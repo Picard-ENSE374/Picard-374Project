@@ -9,8 +9,10 @@ The link file provided in directory will only work on apple, use [this link](htt
 Please use [this link](https://www.youtube.com/watch?v=3oHt59yq8kU&ab_channel=Willyy) for the second vlog video. 
 
 ## Activity 3
-#### Our Project design architecture : [ProjectDocumentation](https://github.com/Picard-ENSE374/Picard-374Project/tree/main/ProjectPrerequisitesPlanning)
-#### Our Interactive Figma Hi-Fi : [this link](https://www.figma.com/proto/GozHc8bLpgvMHs35tH62yM/ShroomBaseHiFiPrototype?node-id=1%3A5&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A5&show-proto-sidebar=1](https://github.com/Picard-ENSE374/Picard-374Project/tree/main/ProjectDesignArchitecture)
+#### Our Project design architecture : [ProjectDesign](https://github.com/Picard-ENSE374/Picard-374Project/tree/main/ProjectDesignArchitecture)
+
+#### Our Interactive Figma Hi-Fi: [here](https://www.figma.com/proto/GozHc8bLpgvMHs35tH62yM/ShroomBaseHiFiPrototype?node-id=1%3A5&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A5&show-proto-sidebar=1)
+
 Please use [this link](https://www.youtube.com/watch?v=IdWbosleIWc) for the second vlog video. 
 
 
