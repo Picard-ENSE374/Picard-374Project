@@ -3,10 +3,16 @@ This Repo Contains all activites done in our ENSE 374 project, working towards S
 ## Activity 1
 #### Project idea selection & introduction Vlog : [IntroVideoVlog](https://github.com/Picard-ENSE374/Picard-374Project/tree/main/IntroVideoVlog)
 The link file provided in directory will only work on apple, use [this link](https://www.youtube.com/watch?v=Sw_80gDr_as&amp;ab_channel=Willyy) for the first vlog video. 
+
 ## Activity 2
 #### Project idea selection & introduction Vlog : [ProjectDocumentation](https://github.com/Picard-ENSE374/Picard-374Project/tree/main/ProjectPrerequisitesPlanning)
 Please use [this link](https://www.youtube.com/watch?v=3oHt59yq8kU&ab_channel=Willyy) for the second vlog video. 
+
 ## Activity 3
+#### Project idea selection & introduction Vlog : [ProjectDocumentation](https://github.com/Picard-ENSE374/Picard-374Project/tree/main/ProjectPrerequisitesPlanning)
+#### Our Interactive Figma Hi-Fi : [here](https://www.figma.com/proto/GozHc8bLpgvMHs35tH62yM/ShroomBaseHiFiPrototype?node-id=1%3A5&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A5&show-proto-sidebar=1)
+Please use [this link](https://www.youtube.com/watch?v=IdWbosleIWc) for the second vlog video. 
+
 
 ## Activity 4
 
