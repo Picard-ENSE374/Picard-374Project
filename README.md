@@ -13,7 +13,7 @@ Please use [this link](https://www.youtube.com/watch?v=3oHt59yq8kU&ab_channel=Wi
 
 #### Our Interactive Figma Hi-Fi: [here](https://www.figma.com/proto/GozHc8bLpgvMHs35tH62yM/ShroomBaseHiFiPrototype?node-id=1%3A5&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A5&show-proto-sidebar=1)
 
-Please use [this link](https://www.youtube.com/watch?v=IdWbosleIWc) for the second vlog video. 
+Please use [this link](https://www.youtube.com/watch?v=kHSK8CtZmis) for the second vlog video. 
 
 
 ## Activity 4
