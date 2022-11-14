@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+<body style="background-color:rgb(146, 0, 0)">
+<!--CONTENTS OF THE MUSHROOM SELECTION MENU AKA mushroomMenu-->
+<div id="mushroomMenu" class="mushroomMenu">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="mushroomDisplay">Mushroom 1</a>
+  <br>
+  <a href="mushroomDisplay">Musrhoom 2</a>
+  <br>
+  <a href="mushroomDisplay">Mushroom 3</a>
+  <br>
+  <a href="mushroomDisplay">Mushroom 4</a>
+  <br>
+  <a href="mushroomDisplay">Mushroom 5</a>
+  <br>
+  <a href="mushroomDisplay">Mushroom 6</a>
+  <br>
+  <a href="mushroomDisplay">Mushroom 7</a>
+  <br>
+  <a href="mushroomDisplay">Mushroom 8</a>
+  <br>
+  <a href="mushroomDisplay">Mushroom 9</a>
+  <br>
+  <a href="mushroomDisplay">Mushroom 10</a>
+</div>
+<!--END OF MUSHROOM SELECTION MENU AKA mushroomMenu-->
+
+
+<header>
+  <h2>
+    <section>
+      <div id="alignLeft"> 
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Search</span> 
+      </div>
+
+      <div id="alignCenter">
+        Welcome to ShroomBase!
+        <img src="images/logo.png" width="80" height="50">
+      </div>
+
+      <div id="alignRight">
+        <div class="dropdown">
+          <span style="font-size:30px;cursor:pointer"><%= currentUser.username %> </span>
+          <div class="dropdown-content">
+            <p><a href="#">Account</a></p>
+            <p><a href="#">Settings</a></p>
+            <p><a href="/logout">Logout</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </h2>
+</header>
+
+<section>
+  <nav>
+    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 1</a> </div>
+    <br>
+    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 2</a> </div>
+    <br>
+    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 3</a> </div>
+    <br>
+    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 4</a> </div>
+    <br>
+    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 5</a> </div>
+    <br>
+    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 6</a> </div>
+    <br>
+    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 7</a> </div>
+    <br>
+    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 8</a> </div>
+    <br>
+    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 9</a> </div>
+    <br>
+    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 10</a> </div>
+    <br>
+  </nav>
+  
+  <article>
+    <h2>Name: Normal/Scientific</h2>
+
+    <div id="createBox"> <img src="images/mushroomSample.jpg" width="250" height="250"> </div>
+ <br>
+    <div id="createBox">
+      <h1>Fun Facts:</h1>
+      <p>List a bunch of fun facts about the mushrooms (if any)</p>
+    </div>
+    <br><br>
+    <div id="createBox">
+      <h1>How To Identify: </h1>
+      <p>List key visual details to recognizing this mushroom</p>
+    </div>
+
+  </article>
+
+  <article>
+
+    <div id="createBox">
+      <h1>Is It Deadly?</h1>
+      <p>If yes write down the common symptoms and treatment methods</p>
+    </div>
+    <br><br>
+    
+    <div id="createBox">
+      <h1>Where it is located</h1>
+      <p>Common growth conditions and locations of the mushrooms</p>
+    </div>
+
+  </article>
+</section>
+
+
+
+
+<script>
+function openNav() {
+  document.getElementById("mushroomMenu").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mushroomMenu").style.width = "0";
+}
+</script>
+
+</body>
+</html> 
