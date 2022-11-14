@@ -17,6 +17,7 @@ Please use [this link](https://www.youtube.com/watch?v=kHSK8CtZmis) for our thir
 
 
 ## Activity 4
+Individual Effort.
 
 ## Activity 5
 
