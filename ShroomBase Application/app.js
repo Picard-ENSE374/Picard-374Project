@@ -114,10 +114,7 @@ app.post("/login", ( req, res ) => {
 
 app.post( "/register", (req, res) => {
     console.log( "User " + req.body.username + " is attempting to register" );
-    console.log( process.env.AUTHENTICATE);
     console.log( req.body.InputAuth);
-    if (process.env.AUTHENTICATE == req.body.InputAuth)
-    {
     Users.register({ username : req.body.username}, 
                     req.body.password, 
                     ( err, user ) => {
@@ -130,12 +127,6 @@ app.post( "/register", (req, res) => {
             });
         }
     });
-}
-else
-{
-    console.log("Authentication Phrase Incorrect");
-    res.redirect( "/" );
-}
 });
 
 app.get('/logout', function(req, res, next) {

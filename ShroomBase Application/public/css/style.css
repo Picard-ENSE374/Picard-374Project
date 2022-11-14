@@ -199,6 +199,7 @@ footer {
 
 .accordion {
   background-color: red;
+  --bs-accordion-btn-color: white;
 }
 
 .accordion-item {
@@ -226,6 +227,7 @@ footer {
 }
 
 .btn-primary {
+  margin-top: 30px;
   --bs-btn-color: #000000;
   --bs-btn-bg: #fff;
   --bs-btn-border-color: #fff;
@@ -240,4 +242,17 @@ footer {
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #fff;
   --bs-btn-disabled-border-color: #fff;
+}
+
+.accordion-item:first-of-type .accordion-button {
+  --bs-btn-color: #FFFFFF;
+}
+
+.accordion-item:last-of-type .accordion-button.collapsed {
+  --bs-btn-color: #FFFFFF;
+}
+
+.form-label {
+  color: white;
+  font-size: 20px;
 }
