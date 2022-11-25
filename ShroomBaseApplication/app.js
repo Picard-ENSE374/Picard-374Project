@@ -1,6 +1,7 @@
 const express = require ( "express" );
 const session = require("express-session")
 const mongoose = require( 'mongoose' );
+ObjectId = require('mongodb').ObjectID;
 const passport = require("passport")
 const passportLocalMongoose = require("passport-local-mongoose");
 require("dotenv").config();
@@ -35,22 +36,22 @@ const usersSchema = new mongoose.Schema (
     }
 );
 
-const tasksSchema = new mongoose.Schema (
-    {
-    text: String,
-    state: String,
-    creator: String,
-    isTaskClaimed: Boolean,
-    claimingUser: String,
-    isTaskDone: Boolean,
-    isTaskCleared: Boolean
-    }
-);
+const mushroomsSchema = new mongoose.Schema ({
+    name: String,
+    scientific: String,
+    safe: Boolean, 
+    location: String, 
+    benefits: String, 
+    symptoms: String, 
+    facts: String,
+    imageFile: String,
+    favouritedBy: [mongoose.Schema.Types.ObjectId]
+});
 
 usersSchema.plugin(passportLocalMongoose);
 
 var Users = mongoose.model ( "Users", usersSchema );
-var Tasks = mongoose.model ( "Tasks", tasksSchema );
+var Mushrooms = mongoose.model ( "Mushrooms", mushroomsSchema );
 
 passport.use(Users.createStrategy());
 passport.serializeUser(Users.serializeUser());
@@ -60,14 +61,18 @@ app.get("/", function (req, res) {
     res.render("login")
 });
 
+var searched = false; 
+var searched_input = ""; 
+
 app.get( "/mainPage", async( req, res ) => {
     console.log("A user is accessing the reviews route using get, and...");
     if ( req.isAuthenticated() ){
         try {
             console.log( "was authorized and found:" );
-            const tasks = await Tasks.find();
-            console.log( tasks );
-            res.render( "mainPage", { tasks : tasks });
+            const mushrooms = await Mushrooms.find();
+            res.render( "mainPage", {mushrooms : mushrooms, searched : searched, input : searched_input});
+            var searched = false; 
+            var searched_input = ""; 
         } catch ( error ) {
             console.log( error );
         }
@@ -77,14 +82,13 @@ app.get( "/mainPage", async( req, res ) => {
     }
 });
 
-app.get( "/mushroomDisplay", async( req, res ) => {
+app.post( "/mushroomDisplay", async( req, res ) => {
     console.log("A user is accessing the reviews route using get, and...");
     if ( req.isAuthenticated() ){
         try {
-            console.log( "was authorized and found:" );
-            const tasks = await Tasks.find();
-            console.log( tasks );
-            res.render( "mushroomDisplay", { tasks : tasks });
+            var mushrooms = await Mushrooms.find();
+            var mushroom = await Mushrooms.findOne(ObjectId(req.body["mushroomid"]));
+            res.render( "mushroomDisplay", {mushroom : mushroom, mushrooms : mushrooms, searched : searched, input : searched_input});
         } catch ( error ) {
             console.log( error );
         }
@@ -92,6 +96,42 @@ app.get( "/mushroomDisplay", async( req, res ) => {
         console.log( "was not authorized." );
         res.redirect( "/" );
     }
+});
+
+app.post("/searchMushroom", async( req, res ) => {
+    if ( req.isAuthenticated() ){
+    searched = true; 
+    type = req.body["search_page"]; 
+    mushroom = req.body["search_id"];
+    
+    searched_input = req.body["search_input"]; 
+    console.log(type);
+    if (searched_input == null || searched_input  == "")
+    {
+        mushrooms = await Mushrooms.find();
+    }
+    else 
+    {
+        console.log(searched_input);
+        mushrooms = await Mushrooms.find({ $or: [{"name": new RegExp(searched_input,'i')}, 
+                                            {"benefits": new RegExp(searched_input,'i')},
+                                            {"symptoms": new RegExp(searched_input,'i')},
+                                            {"facts": new RegExp(searched_input,'i')},] 
+                                        });
+    }
+    if (type == "main" || mushroom ==null)
+    {
+        res.render("mainPage", {mushrooms : mushrooms, searched : searched, input : searched_input});
+    }
+    else
+    {
+        var mushroom = await Mushrooms.findOne(ObjectId(mushroom));
+        res.render("mushroomDisplay", {mushroom : mushroom, mushrooms : mushrooms, searched : searched, input : searched_input});
+    }
+} else {
+    console.log( "was not authorized." );
+    res.redirect( "/" );
+}
 });
 
 app.post("/login", ( req, res ) => {
@@ -137,3 +177,19 @@ app.get('/logout', function(req, res, next) {
       res.redirect('/');
     });
   });
+
+  app.post("/changePassword", async(req, res ) => {
+    console.log(req.body.username);
+    user_to_change = await Users.findOne({"username": req.body.username});
+            console.log(user_to_change);
+            console.log(req.body.oldpassword);
+            console.log(req.body.newpassword);
+            user_to_change.changePassword(req.body.oldpassword, 
+            req.body.newpassword, function (err) {
+                if (err) {
+                    res.redirect( "/" );
+                } else {
+                    res.redirect( "/" );
+                }
+            });
+});

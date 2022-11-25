@@ -5,50 +5,75 @@
 <link href="/css/style.css" rel="stylesheet" type="text/css">
 
 </head>
-<body style="background-color:rgb(146, 0, 0)">
+<body>
 <!--CONTENTS OF THE MUSHROOM SELECTION MENU AKA mushroomMenu-->
-<div id="mushroomMenu" class="mushroomMenu">
+<% if (searched==true) { %>
+<div id="mushroomMenu" class="mushroomMenu" style="width: 300px">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="/mushroomDisplay">Mushroom 1</a>
-  <br>
-  <a href="mushroomDisplay">Musrhoom 2</a>
-  <br>
-  <a href="mushroomDisplay">Mushroom 3</a>
-  <br>
-  <a href="mushroomDisplay">Mushroom 4</a>
-  <br>
-  <a href="mushroomDisplay">Mushroom 5</a>
-  <br>
-  <a href="mushroomDisplay">Mushroom 6</a>
-  <br>
-  <a href="mushroomDisplay">Mushroom 7</a>
-  <br>
-  <a href="mushroomDisplay">Mushroom 8</a>
-  <br>
-  <a href="mushroomDisplay">Mushroom 9</a>
-  <br>
-  <a href="mushroomDisplay">Mushroom 10</a>
+  <form action="/mainPage" method="get">
+    <a onclick="this.closest('form').submit()">Home Page</a>
+    <br>
+  </form>
+  <div class="search-container">
+    <form action="/searchMushroom" method="post">
+      <input class="search_search" type="text" placeholder="Search..." name="search_input" value="<%=input%>">
+      <input type="hidden" value="mushroom" name="main">
+      <input type="submit" hidden>
+    </form>
+  </div>
+  <div id="searchedmushrooms">
+  <% mushrooms.forEach(function (mushroom) { %>
+    <form action="/mushroomDisplay" method="post">
+      <a onclick="this.closest('form').submit()"><%= mushroom.name %></a>
+      <input type="hidden" name="mushroomid" value="<%= mushroom._id%>" >
+      <br>
+    </form>
+    <% }) %>
+  </div>
 </div>
+<% } else { %>
+<div id="mushroomMenu" class="mushroomMenu" style="width: 0px">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <form action="/mainPage" method="get">
+    <a onclick="this.closest('form').submit()">Home Page</a>
+    <br>
+  </form>
+  <div class="search-container">
+    <form action="/searchMushroom" method="post">
+      <input class="search_search" type="text" placeholder="Search..." name="search_input" value="<%=input%>">
+      <input type="hidden" value="main" name="search_page">
+      <input type="submit" hidden>
+    </form>
+  </div>
+  <div id="searchedmushrooms">
+  <% mushrooms.forEach(function (mushroom) { %>
+    <form action="/mushroomdisplay" method="post">
+      <a onclick="this.closest('form').submit()"><%= mushroom.name %></a>
+      <input type="hidden" name="mushroomid" value="<%= mushroom._id%>" >
+      <br>
+    </form>
+    <% }) %>
+  </div>
+</div>
+<% } %>
 <!--END OF MUSHROOM SELECTION MENU AKA mushroomMenu-->
 
 <header>
   <h2>
     <section>
-      <div id="alignLeft"> 
+      <div id="alignRight"> 
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Search</span> 
       </div>
 
       <div id="alignCenter">
-        Welcome to ShroomBase!
+        ShroomBase Dashboard
         <img src="images/logo.png" width="80" height="50">
       </div>
 
       <div id="alignRight">
         <div class="dropdown">
-          <span style="font-size:30px;cursor:pointer"><%= currentUser.username %> </span>
+          <span style="font-size:30px;cursor:pointer"><%= currentUser.username %> &#9881; </span>
           <div class="dropdown-content">
-            <p><a href="#">Account</a></p>
-            <p><a href="#">Settings</a></p>
             <p><a href="/logout">Logout</a></p>
           </div>
         </div>
@@ -60,10 +85,10 @@
 <section>
   <article>
     <br><br><br><br>
-    <h1>Welcome to ShroomBase's Main Page!</h1>
-    <p>Click of the icon next to the "Search" to see a list of Mushrooms</p>
-    <p>Click on the gear next to User_Name_Here to see options related to your account</p>
-    <p>We Hope You Find out Website Usefull!</p>
+    <h1 class="white">Welcome to ShroomBase's Main Page!</h1>
+    <p class="white">Click of the icon next to the "Search" to see a list of Mushrooms</p>
+    <p class="white">Click on the gear next to <%= currentUser.username %> to see options related to your account</p>
+    <p class="white">We Hope You Find out Website Usefull!</p>
     <img src="images/logo.png" width="400" height="300">
     <br><br><br><br>
   </article>
@@ -77,12 +102,13 @@
 
 <script>
 function openNav() {
-  document.getElementById("mushroomMenu").style.width = "250px";
+  document.getElementById("mushroomMenu").style.width = "300px";
 }
 
 function closeNav() {
   document.getElementById("mushroomMenu").style.width = "0";
 }
+
 </script>
 
 </body>

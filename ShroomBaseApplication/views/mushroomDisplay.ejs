@@ -5,51 +5,78 @@
 <link href="/css/style.css" rel="stylesheet" type="text/css">
 
 </head>
-<body style="background-color:rgb(146, 0, 0)">
+<body">
 <!--CONTENTS OF THE MUSHROOM SELECTION MENU AKA mushroomMenu-->
+<% if (searched==true) { %>
+  <div id="mushroomMenu" class="mushroomMenu" style="width: 300px">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <form action="/mainPage" method="get">
+      <a class="a1" onclick="this.closest('form').submit()">Home Page</a>
+      <br>
+    </form>
+  <div class="search-container">
+    <form action="/searchMushroom" method="post">
+      <input class="search_search" type="text" placeholder="Search..." name="search_input" value="<%=input%>">
+      <input type="hidden" value="mushroom" name="search_page">
+      <input type="hidden" value="<%= mushroom._id%>" name="search_id">
+      <input type="submit" hidden>
+    </form>
+  </div>
+  <div id="searchedmushrooms">
+    <% mushrooms.forEach(function (mushroom) { %>
+      <form action="/mushroomDisplay" method="post">
+        <a onclick="this.closest('form').submit()"><%= mushroom.name %></a>
+        <input type="hidden" name="mushroomid" value="<%= mushroom._id%>" >
+        <br>
+      </form>
+      <% }) %>
+    </div>
+  </div>
+  <% } else { %>
 <div id="mushroomMenu" class="mushroomMenu">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="mushroomDisplay">Mushroom 1</a>
-  <br>
-  <a href="mushroomDisplay">Musrhoom 2</a>
-  <br>
-  <a href="mushroomDisplay">Mushroom 3</a>
-  <br>
-  <a href="mushroomDisplay">Mushroom 4</a>
-  <br>
-  <a href="mushroomDisplay">Mushroom 5</a>
-  <br>
-  <a href="mushroomDisplay">Mushroom 6</a>
-  <br>
-  <a href="mushroomDisplay">Mushroom 7</a>
-  <br>
-  <a href="mushroomDisplay">Mushroom 8</a>
-  <br>
-  <a href="mushroomDisplay">Mushroom 9</a>
-  <br>
-  <a href="mushroomDisplay">Mushroom 10</a>
+  <form action="/mainPage" method="get">
+    <a class="a1" onclick="this.closest('form').submit()">Home Page</a>
+    <br>
+  </form>
+<div class="search-container">
+  <form action="/searchMushroom" method="post">
+    <input class="search_search" type="text" placeholder="Search..." name="search_input" value="<%=input%>">
+    <input type="hidden" value="mushroom" name="search_page">
+    <input type="hidden" value="<%= mushroom._id%>" name="search_id">
+    <input type="submit" hidden>
+  </form>
 </div>
+<div id="searchedmushrooms">
+  <% mushrooms.forEach(function (mushroom) { %>
+    <form action="/mushroomDisplay" method="post">
+      <a onclick="this.closest('form').submit()"><%= mushroom.name %></a>
+      <input type="hidden" name="mushroomid" value="<%= mushroom._id%>" >
+      <br>
+    </form>
+    <% }) %>
+  </div>
+</div>
+<% } %>
 <!--END OF MUSHROOM SELECTION MENU AKA mushroomMenu-->
 
 
 <header>
   <h2>
     <section>
-      <div id="alignLeft"> 
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Search</span> 
+      <div id="alignRight"> 
+        <span id="search" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Search</span> 
       </div>
 
       <div id="alignCenter">
-        Welcome to ShroomBase!
-        <img src="images/logo.png" width="80" height="50">
+        Mushroom Description
+        <img src="images/logo.png" width="80" height="50" >
       </div>
 
       <div id="alignRight">
         <div class="dropdown">
-          <span style="font-size:30px;cursor:pointer"><%= currentUser.username %> </span>
+          <span style="font-size:30px;cursor:pointer"><%= currentUser.username %> &#9881; </span>
           <div class="dropdown-content">
-            <p><a href="#">Account</a></p>
-            <p><a href="#">Settings</a></p>
             <p><a href="/logout">Logout</a></p>
           </div>
         </div>
@@ -59,58 +86,54 @@
 </header>
 
 <section>
-  <nav>
-    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 1</a> </div>
-    <br>
-    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 2</a> </div>
-    <br>
-    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 3</a> </div>
-    <br>
-    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 4</a> </div>
-    <br>
-    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 5</a> </div>
-    <br>
-    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 6</a> </div>
-    <br>
-    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 7</a> </div>
-    <br>
-    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 8</a> </div>
-    <br>
-    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 9</a> </div>
-    <br>
-    <div id="createBorderBox"> <a href="mushroomDisplay">Mushroom 10</a> </div>
-    <br>
-  </nav>
   
   <article>
-    <h2>Name: Normal/Scientific</h2>
-
-    <div id="createBox"> <img src="images/mushroomSample.jpg" width="250" height="250"> </div>
+    <h2>Name: <%= mushroom.name %></h2>
+    <h2>Scientific: <%= mushroom.scientific %></h2>
+    <div id="createImageBox"> 
+      <img class="img-mush" src="images/mushrooms/<%=mushroom.imageFile%>" width="100%" height="400"> 
+    </div>
  <br>
-    <div id="createBox">
-      <h1>Fun Facts:</h1>
-      <p>List a bunch of fun facts about the mushrooms (if any)</p>
-    </div>
-    <br><br>
-    <div id="createBox">
-      <h1>How To Identify: </h1>
-      <p>List key visual details to recognizing this mushroom</p>
-    </div>
+    <br>
 
   </article>
 
   <article>
 
     <div id="createBox">
-      <h1>Is It Deadly?</h1>
-      <p>If yes write down the common symptoms and treatment methods</p>
+      <h1>
+        <% if (mushroom.safe == true) { %>
+          This mushroom is <b>SAFE</b> for consumption!
+          <% } %>
+          <% if (mushroom.safe == false) { %>
+            This mushroom is <b>NOT</b> safe for consumption
+            <% } %>
+      </h1>
     </div>
-    <br><br>
-    
+    <br>
+
+
+    <div id="createBox">
+      <h1> Benefits / Symptoms </h1>
+      <p>        
+        benefits: <%= mushroom.benefits %>
+        <br>
+        symptoms: <%= mushroom.symptoms %>
+      </p>
+    </div>
+    <br>
+
+    <div id="createBox">
+      <h1>Fun Facts:</h1>
+      <p><%= mushroom.facts %></p>
+    </div>
+    <br>
+
     <div id="createBox">
       <h1>Where it is located</h1>
-      <p>Common growth conditions and locations of the mushrooms</p>
+      <p><%= mushroom.location %></p>
     </div>
+    
 
   </article>
 </section>
@@ -120,7 +143,7 @@
 
 <script>
 function openNav() {
-  document.getElementById("mushroomMenu").style.width = "250px";
+  document.getElementById("mushroomMenu").style.width = "300px";
 }
 
 function closeNav() {
