@@ -1,5 +1,8 @@
 # Picard-374Project
-This Repo Contains all activites done in our ENSE 374 project, working towards ShroomBase a MVC project to share mushroom information such Pro's and Con's. 
+This Repo Contains all activites done in our ENSE 374 project, working towards ShroomBase a MVC project to share mushroom information such Pro's and Con's.
+
+#### Project Files : [ProjectStorytelling](https://github.com/Picard-ENSE374/Picard-](https://github.com/Picard-ENSE374/Picard-374Project/tree/main/ShroomBaseApplication)
+ 
 ## Activity 1
 #### Project idea selection & introduction Vlog : [IntroVideoVlog](https://github.com/Picard-ENSE374/Picard-374Project/tree/main/IntroVideoVlog)
 The link file provided in directory will only work on apple, use [this link](https://www.youtube.com/watch?v=Sw_80gDr_as&amp;ab_channel=Willyy) for our first vlog video. 
