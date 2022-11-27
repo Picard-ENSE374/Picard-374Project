@@ -87,12 +87,11 @@ nav {
   padding: 20px;
 }
 
-/* Style the list inside the menu */
 nav ul {
   list-style-type: none;
   padding: 0;
 }
-/*FOR THE TOP OF THE PAGE*/
+
 header {
   background-color: #545B5A;
   padding-bottom: 10px;
@@ -101,7 +100,7 @@ header {
   font-size: 28px;
   color: black;
 }
-/*To Section Off different Facts But Keep On Same Lines*/
+
 section {
   display: -webkit-flex;
   display: flex;
@@ -113,7 +112,7 @@ section::after {
   clear: both;
 }
 
-/*Adds another section next to other articles but stays on same line*/
+
 article {
   -webkit-flex: 3;
   -ms-flex: 3;
@@ -123,14 +122,13 @@ article {
   text-align: center;
   color: white;
 }
-/*Used to Create a #C0DFD9 border on the bottom of the page to mirror the #C0DFD9 on top of the page*/
+
 footer {
   padding: 0px;
   text-align: center;
   color: black;
 }
 
-/*For The Mushroom Menu*/
 .mushroomMenu {
   height: 100%;
   width: 0;
@@ -177,8 +175,6 @@ footer {
   margin-left: 50px;
 }
 
-
-/*For The Login/Account detail Dropdown menu to appear*/
 .dropdown {
   position: relative;
   display: inline-block;
@@ -197,8 +193,6 @@ footer {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
-/* login page css */
 
 .box {
   width: auto;
@@ -363,13 +357,13 @@ footer {
 .mushroomdiv1 {
   display: inline-block;
   vertical-align: top;
-  width: 80%;
-  padding: 1rem;
+  width: 84%;
+  padding: 0.5rem;
 }
 
 .mushroomdiv2 {
   display: inline-block;
   vertical-align: top;
   width: 10%;
-  padding: 1rem;
+  padding: 0.5rem;
 }

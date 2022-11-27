@@ -1,0 +1,14 @@
+<div class="mushroomdiv1">
+    <form action="/mushroomdisplay" method="post">
+        <a onclick="this.closest('form').submit()"><%= mushroom %></a>
+        <input type="hidden" name="mushroomid" value="<%= id %>" >
+    </form>
+</div>
+
+<div class="mushroomdiv2">
+    <form action="/favouriteMushroom" method="post">
+        <input type="hidden" name="mushroomname" value="<%= mushroom %>" >
+        <input type="hidden" name="username" value="<%= username %>" >
+        <span onclick="this.closest('form').submit()">&#9829;</span>
+    </form>
+</div>
