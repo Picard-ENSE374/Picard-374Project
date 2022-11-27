@@ -1,7 +1,6 @@
-<center>
 # ShroomBase
-</center>
 
+![alt text]([http://url/to/img.png](https://github.com/Picard-ENSE374/Picard-374Project/blob/main/ProjectStorytelling/ShroomBaseLogo.png))
 
 
 
