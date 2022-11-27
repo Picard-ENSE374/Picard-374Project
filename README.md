@@ -1,3 +1,10 @@
+<p align="center">
+// Your content
+</p>
+
+
+
+
 # Picard-374Project
 This Repo Contains all activites done in our ENSE 374 project, working towards ShroomBase a MVC project to share mushroom information such Pro's and Con's.
 
