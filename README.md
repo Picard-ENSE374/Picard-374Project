@@ -2,9 +2,9 @@
 
 ![ShroomBase](https://github.com/Picard-ENSE374/Picard-374Project/blob/main/ProjectStorytelling/ShroomBaseLogo.png)
 
-##ShroomBase is a mushroom data repository designed to help hikers, foragers, and adventurers find important information regarding various wild mushrooms. 
+## ShroomBase is a mushroom data repository designed to help hikers, foragers, and adventurers find important information regarding various wild mushrooms. 
 
-
+# Installation Instructions : [Installation](https://github.com/Picard-ENSE374/Picard-374Project/blob/main/ProjectStorytelling/Installation%20Instructions.txt)
 
 # Picard-374Project
 This Repo Contains all activites done in our ENSE 374 project, working towards ShroomBase a MVC project to share mushroom information such Pro's and Con's.
