@@ -15,12 +15,12 @@ Please use [this link](https://www.youtube.com/watch?v=3oHt59yq8kU&ab_channel=Wi
 
 Please use [this link](https://www.youtube.com/watch?v=kHSK8CtZmis) for our third vlog video. 
 
-
 ## Activity 4
 Individual Effort.
 
 ## Activity 5
-
+#### Project Storytelling & Live Demo/Presentation : [ProjectStorytelling](https://github.com/Picard-ENSE374/Picard-374Project/tree/main/ProjectPrerequisitesPlanning)
+Please use [this link](https://www.youtube.com/watch?v=4xMHwCxHdz4) for our commercial. 
 
 ## Licence
 
