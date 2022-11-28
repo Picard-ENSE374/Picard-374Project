@@ -26,6 +26,13 @@
       
       <div id="searchedmushrooms">
 
+        <% if (!favourites.length) {
+          mushrooms.forEach(function (mushroom) {  %>
+            
+            <%- include("partials/mushroom.ejs", { username : currentUser.username, mushroom : mushroom.name, id : mushroom._id}) -%>
+        
+        <% })} %>
+
         <% 
         mushrooms.forEach(function (mushroom) { 
           favourites.forEach(function (favourite) {
