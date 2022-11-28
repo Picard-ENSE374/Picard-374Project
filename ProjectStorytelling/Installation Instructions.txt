@@ -10,8 +10,6 @@ The following items are required for the use of the ShroomBase application:
 
 3	ShroomBaseApplication
 	https://github.com/Picard-ENSE374/Picard-374Project/tree/main/ShroomBaseApplication
-	
-
 
 
 
@@ -23,18 +21,15 @@ The installation and running procedure contains the following steps:
 
 2	Ensure that you have a working MongoDB installation.
 
-3	Ensure that your ShroomBaseApplication folder is in a location that it is visible to both Node.js and MongoDB 
+3	Ensure that your ShroomBaseApplication folder is in a location that it is visible to both Node.js and MongoDB.
 
-4	Run the comm
-5	Run the DB installer program on the server.
-6	Install the database.
-7	Import data
-8	Configure API endpoints
-9	Install Application Server
-10	Install APIs
+4	Run the command " npm install " in the project directory using node.js this should install express, mongoose, passport, and ejs. 
 
+4.1 	If there is an issue, manually install them using " npm install [name] ".
 
+5	You will need to load the correct data and tables into MongoDB, run our load file with "node load.js", after a few second close the operation.
 
+6	Lastly, you may run our application using the command "node app.js". 
 
 
 
