@@ -31,30 +31,31 @@
             
             <%- include("partials/mushroom.ejs", { username : currentUser.username, mushroom : mushroom.name, id : mushroom._id}) -%>
         
-        <% })} %>
-
-        <% 
-        mushrooms.forEach(function (mushroom) { 
+        <% })} else { %>
+    
+          <% 
+          mushrooms.forEach(function (mushroom) { 
+            favourites.forEach(function (favourite) {
+              if (favourite.username == currentUser.username && favourite.mushroom == mushroom.name) { 
+                %>
+          
+          <%- include("partials/fav_mushroom.ejs", { username : currentUser.username, mushroom : mushroom.name, id : mushroom._id}) -%>
+          
+          <% }})}) %>
+    
+          <% 
+          mushrooms.forEach(function (mushroom) { 
+          var counter = 0;
           favourites.forEach(function (favourite) {
-            if (favourite.username == currentUser.username && favourite.mushroom == mushroom.name) { 
+            if (!(favourite.username == currentUser.username && favourite.mushroom == mushroom.name)) {
+              counter++;
+              if (counter == (favourites.length)) {
               %>
-        
-        <%- include("partials/fav_mushroom.ejs", { username : currentUser.username, mushroom : mushroom.name, id : mushroom._id}) -%>
-        
-        <% }})}) %>
-  
-        <% 
-        mushrooms.forEach(function (mushroom) { 
-        var counter = 0;
-        favourites.forEach(function (favourite) {
-          if (!(favourite.username == currentUser.username && favourite.mushroom == mushroom.name)) {
-            counter++;
-            if (counter == (favourites.length)) {
-            %>
-            
-        <%- include("partials/mushroom.ejs", { username : currentUser.username, mushroom : mushroom.name, id : mushroom._id}) -%>
-  
-        <% }}})}) %>
+              
+          <%- include("partials/mushroom.ejs", { username : currentUser.username, mushroom : mushroom.name, id : mushroom._id}) -%>
+    
+          <% }}})}) %>
+        <% } %>
       </div>
     </div>
     

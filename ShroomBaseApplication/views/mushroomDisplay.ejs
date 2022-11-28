@@ -27,28 +27,36 @@
     
     <div id="searchedmushrooms">
 
-      <% 
-      mushrooms.forEach(function (mushroom) { 
-        favourites.forEach(function (favourite) {
-          if (favourite.username == currentUser.username && favourite.mushroom == mushroom.name) { 
-            %>
-      
-      <%- include("partials/fav_mushroom.ejs", { username : currentUser.username, mushroom : mushroom.name, id : mushroom._id}) -%>
-      
-      <% }})}) %>
-
-      <% 
-      mushrooms.forEach(function (mushroom) { 
-      var counter = 0;
-      favourites.forEach(function (favourite) {
-        if (!(favourite.username == currentUser.username && favourite.mushroom == mushroom.name)) {
-          counter++;
-          if (counter == (favourites.length)) {
-          %>
+      <% if (!favourites.length) {
+        mushrooms.forEach(function (mushroom) {  %>
           
-      <%- include("partials/mushroom.ejs", { username : currentUser.username, mushroom : mushroom.name, id : mushroom._id}) -%>
-
-      <% }}})}) %>
+          <%- include("partials/mushroom.ejs", { username : currentUser.username, mushroom : mushroom.name, id : mushroom._id}) -%>
+      
+      <% })} else { %>
+  
+        <% 
+        mushrooms.forEach(function (mushroom) { 
+          favourites.forEach(function (favourite) {
+            if (favourite.username == currentUser.username && favourite.mushroom == mushroom.name) { 
+              %>
+        
+        <%- include("partials/fav_mushroom.ejs", { username : currentUser.username, mushroom : mushroom.name, id : mushroom._id}) -%>
+        
+        <% }})}) %>
+  
+        <% 
+        mushrooms.forEach(function (mushroom) { 
+        var counter = 0;
+        favourites.forEach(function (favourite) {
+          if (!(favourite.username == currentUser.username && favourite.mushroom == mushroom.name)) {
+            counter++;
+            if (counter == (favourites.length)) {
+            %>
+            
+        <%- include("partials/mushroom.ejs", { username : currentUser.username, mushroom : mushroom.name, id : mushroom._id}) -%>
+  
+        <% }}})}) %>
+      <% } %>
     </div>
   </div>
   
@@ -69,36 +77,36 @@
     </div>
     <div id="searchedmushrooms">
 
-  <% if (!favourites.length) {
-    mushrooms.forEach(function (mushroom) {  %>
+      <% if (!favourites.length) {
+        mushrooms.forEach(function (mushroom) {  %>
+          
+          <%- include("partials/mushroom.ejs", { username : currentUser.username, mushroom : mushroom.name, id : mushroom._id}) -%>
       
-      <%- include("partials/mushroom.ejs", { username : currentUser.username, mushroom : mushroom.name, id : mushroom._id}) -%>
+      <% })} else { %>
   
-  <% })} else { %>
-
-    <% 
-    mushrooms.forEach(function (mushroom) { 
-      favourites.forEach(function (favourite) {
-        if (favourite.username == currentUser.username && favourite.mushroom == mushroom.name) { 
-          %>
-    
-    <%- include("partials/fav_mushroom.ejs", { username : currentUser.username, mushroom : mushroom.name, id : mushroom._id}) -%>
-    
-    <% }})}) %>
-
-    <% 
-    mushrooms.forEach(function (mushroom) { 
-    var counter = 0;
-    favourites.forEach(function (favourite) {
-      if (!(favourite.username == currentUser.username && favourite.mushroom == mushroom.name)) {
-        counter++;
-        if (counter == (favourites.length)) {
-        %>
+        <% 
+        mushrooms.forEach(function (mushroom) { 
+          favourites.forEach(function (favourite) {
+            if (favourite.username == currentUser.username && favourite.mushroom == mushroom.name) { 
+              %>
         
-    <%- include("partials/mushroom.ejs", { username : currentUser.username, mushroom : mushroom.name, id : mushroom._id}) -%>
-
-    <% }}})}) %>
-  <% } %>
+        <%- include("partials/fav_mushroom.ejs", { username : currentUser.username, mushroom : mushroom.name, id : mushroom._id}) -%>
+        
+        <% }})}) %>
+  
+        <% 
+        mushrooms.forEach(function (mushroom) { 
+        var counter = 0;
+        favourites.forEach(function (favourite) {
+          if (!(favourite.username == currentUser.username && favourite.mushroom == mushroom.name)) {
+            counter++;
+            if (counter == (favourites.length)) {
+            %>
+            
+        <%- include("partials/mushroom.ejs", { username : currentUser.username, mushroom : mushroom.name, id : mushroom._id}) -%>
+  
+        <% }}})}) %>
+      <% } %>
   <% } %>
   </div>
 </div>
