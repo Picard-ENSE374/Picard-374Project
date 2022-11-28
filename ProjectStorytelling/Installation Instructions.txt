@@ -34,18 +34,13 @@ The installation and running procedure contains the following steps:
 
 
 Post-Installation Tasks
-In this section, we describe the post installation tasks.
 
 After you’ve completed the installation, you want to check that everything works fine.
 
-To ensure this, let’s create a checklist and check that everything works correctly.
+1	Check wether you're able to login, signup, and change your password. 
+	-> If not, please reinstall passport.
 
-Post-Installation Checklist
-Use the following checklist for post-installation and configuration requirements.
+2	Check whether you're able to view mushrooms, favourite mushrooms, and search for mushrooms.
+	-> If not, please re-run load.js and reinstall MongoDB with mongoose. 
 
-#	Checklist Item
-1	Check the API endpoints are correct.
-2	Check that the database tables are running.
-3	Check that digital certificates are installed.
-4	Check that you can access the web servers.
-5	Check that security settings have been applied correctly.
+3	If other issues persist please contact our support line by texting: 639 571 3016. 
