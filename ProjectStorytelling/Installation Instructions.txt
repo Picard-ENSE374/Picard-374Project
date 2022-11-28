@@ -27,9 +27,9 @@ The installation and running procedure contains the following steps:
 
 4.1 	If there is an issue, manually install them using " npm install [name] ".
 
-5	You will need to load the correct data and tables into MongoDB, run our load file with "node load.js", after a few second close the operation.
+5	You will need to load the correct data and tables into MongoDB, run our load file with " node load.js ", after a few second close the operation.
 
-6	Lastly, you may run our application using the command "node app.js". 
+6	Lastly, you may run our application using the command " node app.js ". 
 
 
 
