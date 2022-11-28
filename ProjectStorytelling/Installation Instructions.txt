@@ -28,10 +28,11 @@ The installation and running procedure contains the following steps:
 4.2	" npm i express ejs mongoose "
 4.3	" npm i passport passport-local passport-local-mongoose express-session dotenv " 
 
-5	You will need to load the correct data and tables into MongoDB, run our load file with " node load.js ", after a few second close the operation.
+5	You will need to load the correct data and tables into MongoDB, run our load file with " node load.js ", after a few seconds close the operation by clicking 'ctrl' + 'C'.
 
 6	Lastly, you may run our application using the command " node app.js ". 
 
+Running on: http://localhost:3000/
 
 
 Post-Installation Tasks
