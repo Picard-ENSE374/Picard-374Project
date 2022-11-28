@@ -23,9 +23,10 @@ The installation and running procedure contains the following steps:
 
 3	Ensure that your ShroomBaseApplication folder is in a location that it is visible to both Node.js and MongoDB.
 
-4	Run the command " npm install " in the project directory using node.js this should install express, mongoose, passport, and ejs. 
-
-4.1 	If there is an issue, manually install them using " npm install [name] ".
+4	Run the commands:
+4.1	" npm init "
+4.2	" npm i express ejs mongoose "
+4.3	" npm i passport passport-local passport-local-mongoose express-session dotenv " 
 
 5	You will need to load the correct data and tables into MongoDB, run our load file with " node load.js ", after a few second close the operation.
 
